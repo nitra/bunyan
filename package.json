@@ -1,6 +1,6 @@
 {
   "name": "@nitra/bunyan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "cloud run logger",
   "type": "module",
   "main": "./src/index.js",
@@ -38,14 +38,14 @@
   },
   "devDependencies": {
     "@nitra/eslint-config": "^1.0.8",
-    "@nitra/prettier-config": "^1.0.0",
-    "bunyan-debug-stream": "^3.0.2"
+    "@nitra/prettier-config": "^1.0.0"
   },
   "files": [
     "src"
   ],
   "dependencies": {
     "@google-cloud/logging-bunyan": "^4.1.1",
-    "bunyan": "^1.8.15"
+    "bunyan": "^1.8.15",
+    "bunyan-debug-stream": "^3.0.2"
   }
 }
