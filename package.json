@@ -1,6 +1,6 @@
 {
   "name": "@nitra/bunyan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "cloud run logger",
   "type": "module",
   "main": "./src/index.js",

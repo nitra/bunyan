@@ -16,7 +16,6 @@ if (process.env.K_SERVICE) {
     // The JSON payload of the log as it appears in Cloud Logging
     // will contain "name": "catalina-job-sync-from-b2b"
     name: process.env.CLOUD_RUN_JOB,
-    src: true,
     streams: [
       // Log to the console at 'info' and above
       { stream: process.stdout, level: 'info' },
@@ -29,7 +28,6 @@ if (process.env.K_SERVICE) {
 
   loggerOption = {
     name: 'local',
-    src: true,
     streams: [
       {
         level: 'info',
@@ -41,6 +39,11 @@ if (process.env.K_SERVICE) {
     ],
     serializers
   }
+}
+
+// The source file, line and function of the log call site can be added to log
+if (process.env.SHOW_SOURCE) {
+  loggerOption.src = true
 }
 
 export default bunyan.createLogger(loggerOption)
