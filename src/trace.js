@@ -1,5 +1,5 @@
-import bunyan from 'bunyan'
-import { loggerOption, traceKey } from './options.js'
+import { traceKey } from './options.js'
+import log from './index.js'
 import gcpMetadata from 'gcp-metadata'
 
 let projectId
@@ -13,9 +13,9 @@ export default req => {
     const traceId = traceHeader ? traceHeader.split('/')[0] : ''
 
     if (traceId) {
-      loggerOption[traceKey] = `projects/${projectId}/traces/${traceId}`
+      return log.child({ [traceKey]: `projects/${projectId}/traces/${traceId}` }, true)
     }
   }
 
-  return bunyan.createLogger(loggerOption)
+  return log
 }
