@@ -4,8 +4,9 @@ let loggerOption
 
 if (process.env.K_SERVICE) {
   // Imports the Google Cloud client library for Bunyan
-  const { LoggingBunyan } = await import('@google-cloud/logging-bunyan')
-  // import { LoggingBunyan } from '@google-cloud/logging-bunyan'
+  const { LoggingBunyan, LOGGING_TRACE_KEY } = await import('@google-cloud/logging-bunyan')
+  // const traceHeader = req && req.headers ? req.headers['x-cloud-trace-context'] || '' : '';
+  // const traceId = traceHeader ? traceHeader.split('/')[0] : '';
 
   // Creates a Bunyan Cloud Logging client
   const loggingBunyan = new LoggingBunyan()
@@ -23,6 +24,8 @@ if (process.env.K_SERVICE) {
       loggingBunyan.stream('info')
     ]
   }
+
+  loggerOption[LOGGING_TRACE_KEY] = 123
 } else {
   const { create, serializers } = await import('bunyan-debug-stream')
 
