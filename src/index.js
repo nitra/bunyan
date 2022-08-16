@@ -26,7 +26,7 @@ if (process.env.K_SERVICE) {
     ]
   }
 
-  loggerOption[LOGGING_TRACE_KEY] = 123
+  loggerOption[LOGGING_TRACE_KEY] = '123'
 } else {
   const { create, serializers } = await import('bunyan-debug-stream')
 
