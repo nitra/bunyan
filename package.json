@@ -1,15 +1,15 @@
 {
   "name": "@nitra/bunyan",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "cloud run logger",
   "type": "module",
-  "main": "./src/index.js",
   "licenses": [
     {
       "type": "MIT"
     }
   ],
   "exports": {
+    ".": "./src/index.js",
     "./trace": "./src/trace.js"
   },
   "keywords": [
