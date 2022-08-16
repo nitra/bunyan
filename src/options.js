@@ -17,7 +17,7 @@ if (process.env.K_SERVICE) {
     name: process.env.CLOUD_RUN_JOB || process.env.K_SERVICE,
     streams: [
       // Log to the console at 'info' and above
-      { stream: process.stdout, level: 'info' },
+      // { stream: process.stdout, level: 'info' },
       // And log to Cloud Logging, logging at 'info' and above
       loggingBunyan.stream('info')
     ]
