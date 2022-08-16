@@ -1,6 +1,6 @@
 {
   "name": "@nitra/bunyan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "cloud run logger",
   "type": "module",
   "main": "./src/index.js",
@@ -10,9 +10,7 @@
     }
   ],
   "exports": {
-    ".": {
-      "trace": "./src/trace.js"
-    }
+    "./trace": "./src/trace.js"
   },
   "keywords": [
     "bunyan",
