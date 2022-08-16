@@ -16,7 +16,7 @@ if (process.env.K_SERVICE) {
   loggerOption = {
     // The JSON payload of the log as it appears in Cloud Logging
     // will contain "name": "catalina-job-sync-from-b2b"
-    name: process.env.CLOUD_RUN_JOB,
+    name: 'process.env.CLOUD_RUN_JOB',
     streams: [
       // Log to the console at 'info' and above
       { stream: process.stdout, level: 'info' },
