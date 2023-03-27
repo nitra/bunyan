@@ -2,11 +2,12 @@ export let loggerOption
 export let traceKey
 
 const name = process.env.CLOUD_RUN_EXECUTION || process.env.CLOUD_RUN_JOB || process.env.K_SERVICE
+console.log('name', name)
 if (name) {
   // Imports the Google Cloud client library for Bunyan
   const { LoggingBunyan, LOGGING_TRACE_KEY } = await import('@google-cloud/logging-bunyan')
   traceKey = LOGGING_TRACE_KEY
-
+  console.log('traceKey', traceKey)
   // Creates a Bunyan Cloud Logging client
   const loggingBunyan = new LoggingBunyan()
 
