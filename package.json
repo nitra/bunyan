@@ -1,6 +1,6 @@
 {
   "name": "@nitra/bunyan",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "cloud run logger",
   "type": "module",
   "licenses": [
@@ -10,7 +10,8 @@
   ],
   "exports": {
     ".": "./src/index.js",
-    "./trace": "./src/trace.js"
+    "./trace": "./src/trace.js",
+    "./job": "./src/job.js"
   },
   "keywords": [
     "bunyan",
@@ -47,7 +48,7 @@
     "src"
   ],
   "dependencies": {
-    "@google-cloud/logging-bunyan": "^4.1.1",
+    "@google-cloud/logging-bunyan": "^4.2.2",
     "bunyan": "^1.8.15",
     "bunyan-debug-stream": "^3.0.2",
     "gcp-metadata": "^5.0.0"
