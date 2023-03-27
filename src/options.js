@@ -1,7 +1,8 @@
 export let loggerOption
 export let traceKey
 
-if (process.env.K_SERVICE) {
+const name = process.env.CLOUD_RUN_EXECUTION || process.env.CLOUD_RUN_JOB || process.env.K_SERVICE
+if (name) {
   // Imports the Google Cloud client library for Bunyan
   const { LoggingBunyan, LOGGING_TRACE_KEY } = await import('@google-cloud/logging-bunyan')
   traceKey = LOGGING_TRACE_KEY
@@ -14,7 +15,7 @@ if (process.env.K_SERVICE) {
   loggerOption = {
     // The JSON payload of the log as it appears in Cloud Logging
     // will contain "name": "catalina-job-sync-from-b2b"
-    name: process.env.CLOUD_RUN_JOB || process.env.K_SERVICE,
+    name,
     streams: [
       // Log to the console at 'info' and above
       // { stream: process.stdout, level: 'info' },
