@@ -4,9 +4,12 @@ import gcpMetadata from 'gcp-metadata'
 
 const log = bunyan.createLogger(loggerOption)
 
-let projectId
+let logE
 if (traceKey) {
-  projectId = await gcpMetadata.project('project-id')
+  const projectId = await gcpMetadata.project('project-id')
+  logE = log.child({ [traceKey]: `projects/${projectId}/traces/${process.env.CLOUD_RUN_EXECUTION}` }, true)
+} else {
+  logE = log
 }
 
-export default log.child({ [traceKey]: `projects/${projectId}/traces/${process.env.CLOUD_RUN_EXECUTION}` }, true)
+export default logE
