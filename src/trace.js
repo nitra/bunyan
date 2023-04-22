@@ -1,10 +1,10 @@
 import { traceKey } from './options.js'
 import log from './index.js'
-import gcpMetadata from 'gcp-metadata'
+import { getProjectId } from '@nitra/gcp-metadata'
 
 let projectId
 if (traceKey) {
-  projectId = await gcpMetadata.project('project-id')
+  projectId = await getProjectId()
 }
 
 export default req => {

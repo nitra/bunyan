@@ -154,6 +154,13 @@
     eslint-plugin-security "^1.4.0"
     eslint-plugin-vue "^8.3.0"
 
+"@nitra/gcp-metadata@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@nitra/gcp-metadata/-/gcp-metadata-1.0.1.tgz#9b02c4d085fdca6df853a072afd58958c004d389"
+  integrity sha512-l6/wJWgBdtmje2vUWTNAocIWTvwiWmTy18+nPF6I4KfVg10Xa1KevO9HQxdjt2PH6VyhpFiWRqUykPCDHdLjCg==
+  dependencies:
+    gcp-metadata "^5.2.0"
+
 "@nitra/prettier-config@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@nitra/prettier-config/-/prettier-config-1.0.0.tgz#f45519d5f85820b2c45981865b13ff4d360e4c0f"
@@ -1138,6 +1145,14 @@ gcp-metadata@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/gcp-metadata/-/gcp-metadata-5.0.0.tgz#a00f999f60a4461401e7c515f8a3267cfb401ee7"
   integrity sha512-gfwuX3yA3nNsHSWUL4KG90UulNiq922Ukj3wLTrcnX33BB7PwB1o0ubR8KVvXu9nJH+P5w1j2SQSNNqto+H0DA==
+  dependencies:
+    gaxios "^5.0.0"
+    json-bigint "^1.0.0"
+
+gcp-metadata@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/gcp-metadata/-/gcp-metadata-5.2.0.tgz#b4772e9c5976241f5d3e69c4f446c906d25506ec"
+  integrity sha512-aFhhvvNycky2QyhG+dcfEdHBF0FRbYcf39s6WNHUDysKSrbJ5vuFbjydxBcmewtXeV248GP8dWT3ByPNxsyHCw==
   dependencies:
     gaxios "^5.0.0"
     json-bigint "^1.0.0"
