@@ -1,6 +1,6 @@
 {
   "name": "@nitra/bunyan",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "cloud run logger",
   "type": "module",
   "licenses": [

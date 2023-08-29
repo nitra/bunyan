@@ -4,7 +4,12 @@ import { getProjectId } from '@nitra/gcp-metadata'
 
 let projectId
 if (traceKey) {
-  projectId = await getProjectId()
+  // projectId = await getProjectId()
+
+  // Для Binary - Top-level await is currently not supported with the "cjs" output format
+  getProjectId().then(id => {
+    projectId = id
+  })
 }
 
 export default req => {
