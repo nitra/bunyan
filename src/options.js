@@ -8,7 +8,7 @@ const name = process.env.CLOUD_RUN_JOB || process.env.K_SERVICE
 
 if (name) {
   traceKey = LOGGING_TRACE_KEY
-  level = process.env.LOG_LEVEL || 'info'
+  const level = process.env.LOG_LEVEL || 'info'
 
   // Creates a Bunyan Cloud Logging client
   const loggingBunyan = new LoggingBunyan()
