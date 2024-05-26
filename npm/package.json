@@ -1,6 +1,6 @@
 {
-  "name": "nitra-bunyan",
-  "version": "0.0.1",
+  "name": "@nitra/bunyan",
+  "version": "2.1.0",
   "description": "cloud run logger",
   "type": "module",
   "licenses": [
@@ -8,15 +8,17 @@
       "type": "MIT"
     }
   ],
+  "exports": {
+    ".": "./src/index.js",
+    "./trace": "./src/trace.js",
+    "./job": "./src/job.js"
+  },
   "keywords": [
     "bunyan",
     "cloud run",
     "cloud run job",
     "nitra"
   ],
-  "scripts": {
-    "fix": "npx eslint --fix --ext .js . && npx prettier --write '**/*.js'"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nitra/bunyan.git"
@@ -28,12 +30,16 @@
   },
   "homepage": "https://github.com/nitra/bunyan#readme",
   "prettier": "@nitra/prettier-config",
-  "workspaces": [
-    "npm"
-  ],
-  "devDependencies": {
-    "@nitra/eslint-config": "^2.0.26",
-    "@nitra/prettier-config": "^1.0.1"
+  "engines": {
+    "node": ">=20.0.0"
   },
-  "packageManager": "yarn@4.2.2"
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@google-cloud/logging-bunyan": "^5.1.0",
+    "@nitra/gcp-metadata": "^1.3.0",
+    "bunyan": "^1.8.15",
+    "bunyan-debug-stream": "^3.1.0"
+  }
 }
