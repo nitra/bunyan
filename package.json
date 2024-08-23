@@ -32,8 +32,8 @@
     "npm"
   ],
   "devDependencies": {
-    "@nitra/eslint-config": "^2.0.26",
+    "@nitra/eslint-config": "^2.1.1",
     "@nitra/prettier-config": "^1.0.1"
   },
-  "packageManager": "yarn@4.2.2"
+  "packageManager": "yarn@4.4.0"
 }
